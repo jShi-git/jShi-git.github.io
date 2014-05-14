@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>仿制QQ</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			body {
+				background: #000;
+			}
+			#wrapper {
+				width: 340px;
+				position: relative;
+				margin: 30px auto;
+			}
+			.top {
+				height: 52px;
+				overflow: hidden;
+				width: 340px;
+			}
+			.top div {
+				position: absolute;
+			}
+			.cloud {
+				-webkit-animation: cloud 25s infinite linear;
+			}
+			.leafs {
+				background: url(img/HeadImg.png) no-repeat;
+				height: 120px;
+				width: 340px;
+				position: absolute;
+				top: 20px;
+				left: 35px;
+			}
+			.leafs div {
+				float: left;
+				display: inline-block;
+				position: absolute;
+			}
+			.leaf1 {
+				top: 30px;
+				left: 60px;
+				zoom: 0.7;
+				-webkit-transform-origin: 0 0;
+				-webkit-animation: leafsmall 5s infinite linear;
+				-webkit-transform-origin: 0 0;
+			}
+			.leaf2 {
+				top: 40px;
+				left: 100px;
+				-webkit-animation: leaf 3s infinite linear;
+				-webkit-transform-origin: 0 0;
+			}
+			@-webkit-keyframes cloud {
+				0% {
+					opacity: 0;
+					-webkit-transform: translateX(0px);
+				}
+				8% {
+					opacity: 0.9;
+				}
+				80% {
+					opacity: 0.9;
+				}
+				100% {
+					opacity: 0;
+					-webkit-transform: translateX(170px);
+				}
+			}
+			@-webkit-keyframes leafsmall {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				15% {
+					-webkit-transform: rotate(5deg);
+				}
+				50% {
+					-webkit-transform: rotate(0deg);
+				}
+				75% {
+					-webkit-transform: rotate(5deg);
+				}
+				100% {
+					-webkit-transform: rotate(0deg);
+				}
+			}
+			@-webkit-keyframes leaf {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				15% {
+					-webkit-transform: rotate(5deg);
+				}
+				50% {
+					-webkit-transform: rotate(0deg);
+				}
+				75% {
+					-webkit-transform: rotate(5deg);
+				}
+				100% {
+					-webkit-transform: rotate(0deg);
+				}
+			}
+			.loginForm {
+				background-color: rgba(0,23,38,1);
+				height: 230px;
+				width: 360px;
+				border-radius: 10px;
+				box-shadow: 0px 0px 8px;
+			}
+			.loginTitle {
+				background-color: rgb(26,46,56);
+				height: 48px;
+				border-radius: 10px 10px 0px 0px;
+				color: #fff;
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 48px;
+				padding-left: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="top">
+				<div class="sun">
+					<img src="img/sun.png"/>
+				</div>
+				<div class="cloud">
+					<img src="img/cloud.png"/>
+				</div>
+			</div>
+			<div class="leafs">
+				<div class="leaf1">
+					<img src="img/leaf.png"/>
+				</div>
+				<div class="leaf2">
+					<img src="img/leaf.png"/>
+				</div>
+			</div>
+			<div class="loginForm">
+				<div class="loginTitle">
+					登录
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
