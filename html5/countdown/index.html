@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>倒计时</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css"></style>
+</head>
+<body>
+	<div class="container">
+		<div class="setting">
+			<span>时长</span>
+			<input type="text" value="5" id="setMin"/>
+		</div>
+		<input id="start" name="controls" type="radio" />
+		<input id="stop" name="controls" type="radio" />
+		<input id="reset" name="controls" type="radio" />
+		<div class="timer">
+			<div class="cell">
+				<div class="numbers" id="panel">00:00</div>
+			</div>
+		</div>
+		<!-- Lables for the controls -->
+		<div id="timer_controls">
+			<label for="start">开始</label>
+			<label for="stop">暂停</label>
+			<label for="reset">重置</label>
+		</div>
+
+		<audio id="aud" src="alert.mp3" controls preload="auto" autobuffer></audio>
+	</div>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+		jQuery.fn.center = function (flag) {
+			var _this = this;
+			var _top = $(window).height() / 2 - this.height() / 2;
+			var _left = $(window).width() / 2 - this.width() / 2;
+			if (!flag) {
+				_this.animate({
+					marginTop:_top,
+					marginLeft:_left
+				}, 100, "linear");
+				
+				$(window).resize(function () {
+					_this.center(!flag);
+				})
+			} else {
+				_top = (_top < 0) ? 0 : _top;
+				_left = (_left < 0) ? 0 : _left;
+				
+				_this.stop().animate({
+					marginTop: _top,
+					marginLeft: _left
+				}, 100, "linear");
+			}
+		};
+
+		var setMin = 0,
+			curSec = 0,
+			st = 0;
+		function startCount() {
+
+			if(parseInt(setMin) == 0) {
+				setMin = $("#setMin").val();
+				curSec = setMin * 60;
+			}
+
+			curSec--;
+
+			if(curSec > 0) {
+				$("#panel").html(formatSecs(curSec));
+
+				if(curSec < 30) {
+					$("#panel").addClass("red");
+				}
+			} else {
+				if(st) clearInterval(st);
+				setMin = 0;
+				curSec = 0;
+				$("#panel").html("00:00").removeClass("red");
+				alertMaster();
+			}
+			
+		}
+
+		function alertMaster() {
+			$("#aud").get(0).play();
+		}
+
+		function formatSecs(secs) {
+			var min = Math.abs(Math.floor(secs / 60));
+			var sec = secs - min*60;
+
+			if(min < 9) {
+				min = "0" + min;
+			}
+			if(sec < 9) {
+				sec = "0" + sec;
+			}
+
+			return min + ":" + sec;
+		}
+
+		$(function() {
+			$(".container").center({});
+
+			$("input[name=controls]").change(function() {
+				switch($(this).attr("id")) {
+					case "start":
+						if(!$(this).attr("checked")) {
+							st = setInterval("startCount()", 1000);
+						}
+						break;
+					case "stop":
+						if(st) clearInterval(st);
+						break;
+					case "reset":
+						if(st) clearInterval(st);
+						setMin = 0;
+						curSec = 0;
+						$("#aud").get(0).currentTime = 0;
+						$("#aud").get(0).pause();
+						$("#panel").html("00:00").removeClass("red");
+						break;
+					default:
+						break;
+				}
+			})
+		})
+
+	</script></body>
+</html>

@@ -1,0 +1,50 @@
+<{include file='./header.html'}>
+<div data-role="header" data-theme="d"> 
+	 <h1>名称:<{$detail_novel.name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者:<{$detail_novel.author_name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<{$detail.name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./detail.php?m=contents&id=<{$detail.nid}>">返回目录</a></h1> 
+</div> 
+
+<div class="cont_bd">
+	
+    <div class="ui-body ui-body-d">
+	 <ul id="swipeallery">
+		 <li id="test1">
+		 <{$detail.content}>
+		 </li>
+	 </ul>
+     
+     <ul>
+     	<li class="pages_sy">
+        	<dl>
+            	<dt>
+                	<dd>
+					<a href="<{if $detail_prev.id}>./detail.php?id=<{$detail_prev.id}><{else}>#<{/if}>" data-role="button" data-icon="arrow-l" data-theme="c" class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text"><{if $detail_prev.name}><{$detail_prev.name}><{else}>无上一篇<{/if}>
+					</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+					</dd>
+                    <dd>
+					<a href="<{if $detail_next.id}>./detail.php?id=<{$detail_next.id}><{else}>#<{/if}>" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-corner-bottom ui-controlgroup-last ui-btn-up-c"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-btn-text"><{if $detail_next.name}><{$detail_next.name}><{else}>无下一篇<{/if}>
+					</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></span></a>
+					</dd>
+                    <dd><a href="./detail.php?m=contents&id=<{$detail.nid}>">返回小说首页</a> </dd>
+                    <dd> <a href="#">回到排行榜</a></dd>
+                    <dd><a href="./index.php?cid=<{$detail.cat}>">回到分类首页</a></dd>
+                </dt>
+            </dl> 
+        </li>
+     </ul>
+
+     
+</div>
+    
+        
+    
+    <ul data-role="listview" data-inset="true">
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+	</ul>
+    
+</div>
+    <!--Footer-->
+	<{include file='./footer.html'}>
+</body>
+</html>

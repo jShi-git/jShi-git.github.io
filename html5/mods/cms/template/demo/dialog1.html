@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>jQuery Mobile Framework - Dialog Example</title> 
+<link rel="stylesheet"  href="./../style/css/jquery.mobile-1.0rc2.min.css" />  
+<link rel="stylesheet" href="./../style/css/jqm-docs.css"/>
+<link rel="stylesheet" href="./style/css/add.css"/>
+<script src="./../style/js/jquery-1.6.4.min.js"></script> 
+<script src="./../style/js/jquery.mobile.themeswitcher.js"></script> 
+<script src="./../style/js/jqm-docs.js"></script> 
+<script src="./../style/js/jquery.mobile-1.0rc2.min.js"></script> 
+</head> 
+<body> 
+ 
+<div data-role="page"> 
+	
+		<div data-role="header" data-theme="d"> 
+			<h1>发表评论</h1> 
+ 
+		</div> 
+ 
+		<div data-role="content" data-theme="c"> 
+			<ul class="common_bd">
+            <li>
+            <label for="df" class="ui-input-text fl">得&nbsp;&nbsp;&nbsp;&nbsp;分：</label>
+            <input type="number" data-type="range" name="slider" id="slider-c" value="0" min="0" max="100" class="ui-slider-input ui-input-text ui-body-c ui-corner-all ui-shadow-inset input_df">
+            
+            </li>
+<li>
+		<label for="username" class="ui-input-text fl">内&nbsp;&nbsp;&nbsp;&nbsp;容：</label>
+		<textarea class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset textarea"></textarea>
+</li>
+<li>
+		<label for="username" class="ui-input-text fl"> 验证码：</label>
+		<label class="fl">5+</label>&nbsp;&nbsp;<input type="text" name="antirbt" id="antirbt" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset txt_w2 fl">&nbsp;<label class="fl">=18</label>
+</li>
+            </ul>
+			<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b">发表评论</a>  
+		</div> 
+	</div>
+ 
+ 
+</body> 
+</html> 

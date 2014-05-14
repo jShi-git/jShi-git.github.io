@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>文章页</title>
+<link rel="stylesheet"  href="../style/css/jquery.mobile-1.0rc2.min.css" />  
+<link rel="stylesheet" href="../style/css/jqm-docs.css"/>
+<link rel="stylesheet" href="../style/css/jquery.swipegallery.css"/>
+<link rel="stylesheet" href="../style/css/add.css"/> 
+<script src="../style/js/jquery-1.6.4.min.js"></script> 
+<!--翻页-->
+<script type="text/javascript" src="../style/js/jquery.swipegallery.js"></script> 
+<script type="text/javascript" src="../style/js/jquery.mobile.js"></script> 
+<script type="text/javascript" language="Javascript">
+	$(window).load(function() { 
+		$('#swipeallery').swipeGallery({autoHeight: false});  
+	});
+</script>
+</head> 
+<body>
+<!--Navigation-->
+     <!--Search-->
+<div data-role="header" data-position="fixed" data-theme="f" class="ui-header ui-bar-f ui-header-fixed fade ui-fixed-overlay" role="banner">
+
+<div data-role="footer" data-theme="a" class="ui-bar ui-grid-c ui-footer ui-bar-a" role="contentinfo" style="background:transparent;border:none;">
+          <div class="ui-block-a"><h3>个人信息：张三 会员：41级</h3></div>
+          <div class="ui-block-b"><label for="value" style="margin:.3em 0 0 0 ; text-align:right;" class="ui-input-text">搜索：</label> </div>
+          <div class="ui-block-c">
+   
+    <input type="text" data-type="search" name="search2" id="search" value="" class="ui-input-text ui-body-c">
+</div>	 
+          <div class="ui-block-d"><div style="margin:2px 0 0 10px;"><!--<div data-theme="b" class="ui-btn ui-btn-up-b ui-btn-corner-all ui-shadow" aria-disabled="false"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Update</span></span>--><button type="submit" data-theme="b" class="ui-btn-hidden" aria-disabled="false" onclick="window.location.href='search.html'">搜索</button></div></div>
+    </div>
+		
+</div>
+
+<!--Submenu-->
+    <div data-role="navbar" data-grid="d" class="ui-navbar ui-navbar-noicons" role="navigation">
+         <ul class="ui-grid-d f14">
+            <li class="ui-block-a"><a href="#" class="ui-btn-active ui-btn ui-btn-up-c" data-theme="c"><span class="ui-btn-inner" aria-hidden="true"><span class="ui-btn-text"><font><font>首页</font></font></span></span></a></li>
+            <li class="ui-block-b"><a href="#" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true"><span class="ui-btn-text"><font><font>娱乐新闻</font></font></span></span></a></li>
+            <li class="ui-block-c"><a href="#" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true"><span class="ui-btn-text"><font><font>军事新闻</font></font></span></span></a></li>
+            <li class="ui-block-d"><a href="#" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true"><span class="ui-btn-text"><font><font>女性新闻</font></font></span></span></a></li>
+            <li class="ui-block-e"><a href="#" data-theme="c" class="ui-btn ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true"><span class="ui-btn-text"><font><font>推荐</font></font></span></span></a></li>
+        </ul>
+    </div>
+	
+    <!--Content-->	
+	
+<!--翻页-->
+<div data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+
+   <a href="#" data-role="button" data-icon="arrow-l" data-theme="c" class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">在HTML文件引入其它HTML文件的几种方法
+</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>	 <a href="#" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-corner-bottom ui-controlgroup-last ui-btn-up-c"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-btn-text">我的博客网站首次被封了
+</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></span></a>   </div>
+
+
+<!--文章页-->
+<div class="bd_con" style="padding:0;">
+	 <ul id="swipeallery">
+		 <li>
+		 <div class="img_c"><img src="../style/images/slide2.jpg" alt="" title=""/></div>
+		 主要特点：
+			jQuery核心建立在熟悉和一致的jQuery语法和最小的学习曲线，并利用jQuery UI的代码和模式 。
+			兼容所有主要的移动，片剂，电子阅读器和桌面平台 - IOS，Android的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			响应的设计技术和工具，允许相同的基础代码库，从智能手机到桌面大小屏幕自动缩放
+			强大的Ajax驱动的导航系统，使动画页面转换，同时保持按钮，书签和干净的URL虽然 pushState。
+			无障碍功能，如WAI - ARIA也包括在内，以确保页面的屏幕阅读器（例如在iOS配音）和其他辅助技术工作。
+			触摸和鼠标事件支持精简过程中，支持触摸，鼠标和光标焦点基于用户输入一个简单的API的方法 。
+			加强与共同控制的统一的UI部件触摸进行了优化，是平台无关和易于使用的主题化控件的本地控制。
+			强大的主题化的框架和ThemeRoller应用程序，使高品牌的经验 ，很容易建立。
+		 </li>
+		 <li>
+         <div class="img_c"><img src="../style/images/slide4.jpg" alt="" title=""/></div>
+         主要特点：
+			jQuery核心建立在熟悉和一致的jQuery语法和最小的学习曲线，并利用jQuery UI的代码和模式 。
+			兼容所有主要的移动，片剂，电子阅读器和桌面平台 - IOS，Android的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			d的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			响应的设计技术和工具，允许相同的基础代码库，从智能手机到桌面大小屏幕自动缩放
+			强大的Ajax驱动的导航系统，使动画页面转换，同时保持按钮，书签和干净的URL虽然 pushState。
+			无障碍功能，如WAI - ARIA也包括在内，以确保页面的屏幕阅读器（例如在iOS配音）和其他辅助技术工作。
+			触摸和鼠标事件支持精简过程中，支持触摸，鼠标和光标焦点基于用户输入一个简单的API的方法 。
+			加强与共同控制的统一的UI部件触摸进行了优化，是平台无关和易于使用的主题化控件的本地控制。
+			强大的主题化的框架和ThemeRoller应用程序，使高品牌的经验 ，很容易建立。<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要特点：
+			jQuery核心建立在熟悉和一致的jQuery语法和最小的学习曲线，并利用jQuery UI的代码和模式 。
+			兼容所有主要的移动，片剂，电子阅读器和桌面平台 - IOS，Android的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			响应的设计技术和工具，允许相同的基础代码库，从智能手机到桌面大小屏幕自动缩放
+			强大的Ajax驱动的导航系统，使动画页面转换，同时保持按钮，书签和干净的URL虽然 pushState。
+			无障碍功能，如WAI - ARIA也包括在内，以确保页面的屏幕阅读器（例如在iOS配音）和其他辅助技术工作。
+			触摸和鼠标事件支持精简过程中，支持触摸，鼠标和光标焦点基于用户输入一个简单的API的方法 。
+			加强与共同控制的统一的UI部件触摸进行了优化，是平台无关和易于使用的主题化控件的本地控制。
+			强大的主题化的框架和ThemeRoller应用程序，使高品牌的经验 ，很容易建立。<br/>
+			&nbsp;&nbsp;经验 ，很容易建立。
+		 </li>
+		 <li>
+         <div class="img_c"><img src="../style/images/slide5.jpg" alt="" title=""/></div>
+         主要特点：
+			jQuery核心建立在熟悉和一致的jQuery语法和最小的学习曲线，并利用jQuery UI的代码和模式 。
+			兼容所有主要的移动，片剂，电子阅读器和桌面平台 - IOS，Android的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			响应的设计技术和工具，允许相同的基础代码库，从智能手机到桌面大小屏幕自动缩放
+			强大的Ajax驱动的导航系统，使动画页面转换，同时保持按钮，书签和干净的URL虽然 pushState。
+			无障碍功能，如WAI - ARIA也包括在内，以确保页面的屏幕阅读器（例如在iOS配音）和其他辅助技术工作。
+			触摸和鼠标事件支持精简过程中，支持触摸，鼠标和光标焦点基于用户输入一个简单的API的方法 。
+			加强与共同控制的统一的UI部件触摸进行了优化，是平台无关和易于使用的主题化控件的本地控制。
+			强大的主题化的框架和ThemeRoller应用程序，使高品牌的经验 ，很容易建立。<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要特点：
+			jQuery核心建立在熟悉和一致的jQuery语法和最小的学习曲线，并利用jQuery UI的代码和模式 。
+			兼容所有主要的移动，片剂，电子阅读器和桌面平台 - IOS，Android的，黑莓，Palm的WebOS，诺基亚/诺基亚的Windows Phone 7，MeeGo的，Opera移动/迷你，Firefox移动，点燃，角落，和所有的现代浏览器支持分级水平。
+			轻量的大小和速度最小的图像的依赖关系。
+			模块化架构进行了优化，只为特定应用所需的功能，用于创建自定义构建
+			HTML5的标记驱动的配置的快速发展和所需最低脚本的网页和行为 。
+			渐进增强的方式带来的核心内容和功能的所有手机，平板电脑和台式机平台和丰富，新的移动平台上安装的应用程序的经验。
+			响应的设计技术和工具，允许相同的基础代码库，从智能手机到桌面大小屏幕自动缩放
+			强大的Ajax驱动的导航系统，使动画页面转换，同时保持按钮，书签和干净的URL虽然 pushState。
+			无障碍功能，如WAI - ARIA也包括在内，以确保页面的屏幕阅读器（例如在iOS配音）和其他辅助技术工作。
+			触摸和鼠标事件支持精简过程中，支持触摸，鼠标和光标焦点基于用户输入一个简单的API的方法 。
+			加强与共同控制的统一的UI部件触摸进行了优化，是平台无关和易于使用的主题化控件的本地控制。
+			强大的主题化的框架和ThemeRoller应用程序，使高品牌的经验 ，很容易建立。
+		 </li>
+	 </ul>
+
+     <div class="vis_info">
+        <ul>
+            <li style="margin-top:5px;">阅读:186  |  评论:0</li>
+            <li>得分：     <b>5</b></li>
+            <li style="margin-top:-17px;">留言:&nbsp;共有&nbsp;<span class="ui-link">0</span>&nbsp;条留言&nbsp;&nbsp;&nbsp;&nbsp;<a href="dialog1.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="slidedown" data-theme="c" class="ui-btn ui-btn-inline ui-btn-corner-all ui-shadow ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">发表评论</span></span></a></li>
+            
+        </ul>
+     </div>
+</div>
+	
+
+
+    <!--Footer-->
+    <div data-role="footer" class="footer-docs ui-footer ui-bar-a ui-footer-fixed fade ui-fixed-overlay" data-theme="a" data-position="fixed" role="contentinfo">
+        <h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><font><font>Copyright©2011-2014 手机版 版权所有</font></font></h1>
+    </div>
+</body>
+</html>

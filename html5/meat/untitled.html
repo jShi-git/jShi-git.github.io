@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Restaurant</title>
+  <link rel="stylesheet" type="text/css" href="css/newcss.css">
+  <script src="js/iscroll.js"></script>
+  <script>
+  var url = "example.json";
+
+  function loadXMLDoc() {
+      var xmlhttp;
+      if (window.XMLHttpRequest) {
+          xmlhttp = new XMLHttpRequest();
+      } else {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.open("GET", url, false);
+      xmlhttp.send();
+
+      var dataObj = JSON.parse(xmlhttp.responseText);
+      var ul = '<ul class="ul1">';
+      for (var i = 0, len = dataObj.goods.length; i < len; i++) {
+          ul += '<li class="li1"><a href="#" class="link1" id="info1">' + dataObj.goods[i].name + '</a></li>';
+      }
+      ul += '</ul>';
+
+      document.getElementById("scroll").innerHTML = ul;
+
+      var ul2 = '<ul class="ul2">';
+      for (var j = 0, len2 = dataObj.goods.length; j < len2; j++) {
+          ul2 += '<li class="li2"><a href="#" class="link2"><img src="' + dataObj.goods[j].image + '" /></a></li>';
+      }
+      ul2 += '</ul>';
+
+      document.getElementById("scrol2").innerHTML = ul2;
+
+      myScroll = new iScroll('scroll', {
+              vScrollbar: false
+          });
+          myScroll = new iScroll('scrol2', {
+              vScrollbar: false
+          });
+  }
+
+  (function() {
+      var myScroll, myScrol2;
+      document.addEventListener('touchmove',  function(e) { e.preventDefault(); }, false);
+  })();
+  </script>
+</head>
+<body>
+  <div id="myDiv">
+    <h2>Let AJAX change this text</h2>
+  </div>
+  <button type="button" onClick="loadXMLDoc()">通过 AJAX 改变内容</button>
+  <div class="container">
+    <div class="left" id="left">
+      <div class="left_nav" id="scroll"></div>
+     </div>
+
+    <div class="right">
+      <div class="right_info" id="scrol2" ></div>
+      </div>
+    </div>
+
+</body>
+</html>

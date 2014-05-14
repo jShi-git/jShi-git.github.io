@@ -1,0 +1,11 @@
+<div data-role="header" data-position="fixed" class="ui-header ui-header-fixed fade ui-fixed-overlay">
+	 <div data-role="navbar"> 
+          <ul> 
+             <li><a href="./" data-icon="grid"<{if (!isset($cat_id))}> class="ui-btn-active"<{/if}>>首页</a></li> 
+             <li><a href="./cat.php?id=1" data-icon="grid"<{if (isset($cat_id)&&($cat_id==1))}> class="ui-btn-active"<{/if}>>武侠</a></li> 
+             <li><a href="./cat.php?id=2" data-icon="star"<{if (isset($cat_id)&&($cat_id==2))}> class="ui-btn-active"<{/if}>>言情</a></li> 
+             <li><a href="./cat.php?id=3" data-icon="gear"<{if (isset($cat_id)&&($cat_id==3))}> class="ui-btn-active"<{/if}>>科幻</a></li> 
+             <li><a href="./cat.php?id=4" data-icon="plus"<{if (isset($cat_id)&&($cat_id==4))}> class="ui-btn-active"<{/if}>>文学</a></li> 
+         </ul> 
+	 </div>		
+</div>

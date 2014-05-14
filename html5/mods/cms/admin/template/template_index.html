@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title><{$title}></title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+</head>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+  
+<!--  内容列表   -->
+<form name="form2">
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="10" background="skin/images/tbg.gif">&nbsp;模块列表&nbsp;</td>
+</tr>
+<{if $list}>
+<tr align="center" bgcolor="#FAFAF1" height="22">
+	<td width="6%">ID</td>
+	<td width="28%">模块名称</td>
+	<td width="12%">是否已选模版</td>
+	<td width="20%">操作</td>
+</tr>
+<{foreach from=$list item=item}>
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+	<td><{$item.id}></td>
+	<td align="center"><{$item.module}></td>
+	<td><{if $item.used==1}>是<{else}>否<{/if}></td>
+	<td><a href="index.php?c=admin_template&m=select&id=<{$item.id}>">选择</a> </td>
+</tr>
+<{/foreach}>
+<{/if}>
+
+</table>
+
+</form>
+
+<!--  搜索表单  -->
+<form name='form3' action='index.php?c=admin_collection&m=lists' method='post'>
+<input type='hidden' name='dopost' value='' />
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+  <tr bgcolor='#EEF4EA'>
+    <td background='skin/images/wbg.gif' align='center'>
+      <table border='0' cellpadding='0' cellspacing='0'>
+        <tr>
+		<td height="36" colspan="7" align="center"><div style="width:360px;margin:0 auto;"><!--翻页代码 --><{$page_str}></div></td>
+        <td>
+        </td>
+        <td>
+        </td>
+       </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

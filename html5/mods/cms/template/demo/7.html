@@ -1,0 +1,44 @@
+<{include file='./header.html'}>
+<div class="cont_bd">
+    <ul data-role="listview" data-inset="true" class="xs_list3"> 
+        <li data-role="list-divider">搜索结果</li>
+
+
+        <{if $datalist}>
+		<{foreach item=item from=$datalist name=record}>
+        <li class="fl_tab_list">
+        	<a href="./detail.php?m=cover&id=<{$item.id}>">
+            <span><{$item.name}></span>
+            <span>作者：<{$item.author_name}></span>
+            <span>排名：<{$smarty.foreach.record.index+1}></span></a>
+        </li>
+
+		<{/foreach}>
+		<{else}>
+		<li>暂无数据</li> 
+		<{/if}>
+         
+
+        <li class="custom_ui pages_sy ui-bar-d">
+		<{$page_str}>
+		</li>
+
+
+    </ul>
+    <!--
+	<ul data-role="listview" data-inset="true" class="xs_list2"> 
+        <li data-role="list-divider">搜索结果</li> 
+		<li><a href="index.html"><span>伈伈睍睍</span> <span>大大滴答</span></a></li> 
+    </ul>
+	-->
+    <ul data-role="listview" data-inset="true">
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+	</ul>
+    
+</div>
+    <!--Footer-->
+	<{include file='./footer.html'}>
+</body>
+</html>

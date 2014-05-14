@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="baidu_union_verify" content="7ef8a010b57c4adffee860a7a7baed97">
+	<title>实例陈列架-陈列一些日常开发中的有意思的小实例-施祖武</title>
+	<meta name="description" content="实例陈列架-陈列一些日常开发中的有意思的小实例: css3, html5, javascript,jquery,">
+	<meta name="keywords" content="施祖武, 实例, css3, html5, jquery, javascript,">
+	<meta name="author" content="施祖武">	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=10; user-scalable=1;" />
+	<title>实例陈列架-陈列一些日常开发中的有意思的小实例</title>
+	
+	<link rel="stylesheet" href="http://demos.shizuwu.cn/css/style.css">
+
+<link rel="stylesheet" href="include/css/galleria.twelve.css">
+<style type="text/css">
+
+#body {
+	width:500px;
+	height:350px;
+	overflow:hidden;
+	margin:0px auto;
+	border:5px solid #fff;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	-moz-box-shadow: 0px 8px 8px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: 0px 8px 8px rgba(0, 0, 0, .4);
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, .4);
+}
+body {
+	background-color:		#d6cdb0;
+}
+</style>
+
+<style>
+.galleria-tooltip {
+	padding:3px 8px;
+	max-width:50%;
+	background:#ffe;
+	color:#000;
+	z-index:3;
+	position:absolute;
+	font-size:11px;
+	line-height:1.3opacity:0;
+	box-shadow:0 0 2px rgba(0, 0, 0, .4);
+	-moz-box-shadow:0 0 2px rgba(0, 0, 0, .4);
+	-webkit-box-shadow:0 0 2px rgba(0, 0, 0, .4);
+}
+</style>
+</head>
+<body>
+<div id="body">
+    <div id="galleria"></div>
+</div>
+
+<script src="include/js/jquery-1.7.1.js"></script>
+<script src="include/js/galleria-1.2.8.js"></script>
+<script>
+	Galleria.loadTheme('include/js/galleria.twelve.js');
+
+	var data = [
+		{
+			image:"include/images/1_thm.jpg",
+			thumb:"include/images/1_thm.jpg",
+			big:"include/images/1_thm.jpg",
+			title:"中国映像",
+			description:"第一张",
+			link:"#"
+		},
+		{
+			image:"include/images/2_thm.jpg",
+			thumb:"include/images/2_thm.jpg",
+			big:"include/images/2_thm.jpg",
+			title:"中国映像",
+			description:"第二张",
+			link:"#"
+		},
+		{
+			image:"include/images/3_thm.jpg",
+			thumb:"include/images/3_thm.jpg",
+			big:"include/images/3_thm.jpg",
+			title:"中国映像",
+			description:"第三张",
+			link:"#"
+		},
+		{
+			image:"include/images/4_thm.jpg",
+			thumb:"include/images/4_thm.jpg",
+			big:"include/images/4_thm.jpg",
+			title:"中国映像",
+			description:"第四张",
+			link:"#"
+		}
+	];
+
+	jQuery(function($) {
+		$('#galleria').galleria({
+			  width: 500,
+			  height: 350,
+			  imageCrop: false,
+			  dataSource: data,
+			  fullscreenCrop : false,
+			  imagePan : false, 
+			  swipe : true,
+			  debug : true
+		  });
+	  });
+</script> 
+	<script type="text/javascript" src="https://breakphp.googlecode.com/svn/trunk/global/js/auth.js"></script>
+	<div style="display:none;">
+	<!-- shizuwu Baidu tongji analytics -->
+	<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0871f45dbb6f9252cbcf6e23bc3335e8' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</body>
+</html>

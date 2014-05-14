@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Restaurant</title>
+<link rel="stylesheet" type="text/css" href="css/newcss.css">
+<script language="javascript"  src="js/tabchange.js"></script>
+<script language="javascript"  src="js/iscroll.js"></script>
+<script language="javascript"  src="js/jax2.js"></script>
+<script language="javascript">
+	//格式化补0的函数
+	function formatZero(num)
+	{
+		return num<10?("0"+num):num;
+	}
+</script>
+<script>
+window.onload=function()
+ {
+ 
+  var today = new Date();
+ var strDate = "当前时间：";
+ strDate += formatZero(today.getHours())+":"+formatZero(today.getMinutes());
+ document.getElementById("time_info").innerHTML=strDate; 
+ tab();
+
+}
+
+</script>
+<script>
+(function(){
+	var myScroll;
+	function loaded() {
+		myScroll = new iScroll('scroll',{vScrollbar: false});
+	}
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+})();
+
+
+(function(){
+	var myScrol2;
+	function loaded2() {
+		myScroll = new iScroll('scrol2',{vScrollbar: false});
+	}
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded2, 10); }, false);
+})();
+</script>
+<script>
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","http://dev.foodpai.com/?m=app&c=sync&a=json",true);
+
+var dataObj = JSON.parse(json);
+localStorage.jsonData = dataObj;
+ 
+</script>
+<!-- <script>
+var  dy_div=parent.document.getElementById("left");
+ if(dy_div.getElementsByTagName("ul").length!=0){   
+ dy_div.innerHTML="";
+   }
+
+var cre_ul=document.createElement("ul");
+var v_li=document.createElement("li");
+cre_ul.id="leftMenu";
+v_li.id="rightMenu";
+cre_ul.className="ul1";
+v_li.className="li1";
+var a1=document.createElement（"a"）;
+a1.className="link1";
+ 
+var oa=v_li.appendChild(a1);
+for (var i=0;i<v_li.length;i++){
+
+v_li[i].onmousedown=function(){
+
+function selectTab(n){
+	
+   var leftMenu=document.getElementById("leftMenu").getElementsByTagName("li");
+	var rightMenu=document.getElementById("rightMenu").getElementsByTagName("li");
+	for (var i=0;i<leftMenu.length;i++){
+		leftMenu[i].index=i;
+		leftMenu[i].onclick=function(){
+			for (var j=0;j<leftMenu.length;j++){
+				leftMenu[j].className="li2s";
+				rightMenu[j].className="link1";
+			}
+			var num=this.index;
+			leftMenu[this.index].className="li2";
+			rightMenu[num].className="link_current";
+		}
+	}
+	
+}  
+}
+
+}
+ dy_div=v_li.appendChild(cre_ul);
+</script> -->
+</head>
+<body >
+<div class="container">
+  <div class="left" id="left">
+    <div class="left_nav" id="scroll">
+  <ul class="ul1">
+        <li class="li1"  onmousedown="selectTab(1)"><a href="#" class="link_current" id="info1">刺身</a></li>
+        <li class="li1"  onmousedown="selectTab(2)"><a href="#" class="link1" id="info2">生海鲜</a></li>
+        <li class="li1"  onmousedown="selectTab(3)"><a href="#" class="link1" id="info3">熟海鲜</a></li>
+        <li class="li1"  onmousedown="selectTab(4)"><a href="#" class="link1" id="info4">串烧类</a></li>
+        <li class="li1"  onmousedown="selectTab(5)"><a href="#" class="link1" id="info5">飞禽类</a></li>
+        <li class="li1"  onmousedown="selectTab(6)"><a href="#" class="link1" id="info6">牛肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(7)"><a href="#" class="link1" id="info7">羊肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(8)"><a href="#" class="link1" id="info8">猪肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(9)"><a href="#" class="link1" id="info9">炸类</a></li>
+        <li class="li1"  onmousedown="selectTab(10)"><a href="#" class="link1" id="info10">铁板烧菜类</a></li>
+        <li class="li1"  onmousedown="selectTab(11)"><a href="#" class="link1" id="info11">水果类</a></li>
+        <li class="li1"  onmousedown="selectTab(12)"><a href="#" class="link1" id="info12">刺身</a></li>
+        <li class="li1"  onmousedown="selectTab(13)"><a href="#" class="link1" id="info13">生海鲜</a></li>
+        <li class="li1"  onmousedown="selectTab(14)"><a href="#" class="link1" id="info14">熟海鲜</a></li>
+        <li class="li1"  onmousedown="selectTab(15)"><a href="#" class="link1" id="info15">串烧类</a></li>
+        <li class="li1"  onmousedown="selectTab(16)"><a href="#" class="link1" id="info16">飞禽类</a></li>
+        <li class="li1"  onmousedown="selectTab(17)"><a href="#" class="link1" id="info17">牛肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(18)"><a href="#" class="link1" id="info18">羊肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(19)"><a href="#" class="link1" id="info19">猪肉类</a></li>
+        <li class="li1"  onmousedown="selectTab(20)"><a href="#" class="link1" id="info20">炸类last</a></li>
+      </ul> 
+    </div>
+    <!--left_nav-->
+    <div class="date_time" id="time_info"> </div>
+    <!--date_time-->
+  </div>
+  <!--left-->
+  <div class="right">
+    <div class="right_info" id="scrol2" >
+      <ul class="ul2" >
+        <li class="li2" id="menu1"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu2"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu3"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu4"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu5"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu6"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a></li>
+        <li class="li2s" id="menu7"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu8"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu9"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu10"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu11"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu12"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu13"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu14"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu15"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu16"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu17"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu18"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu19"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+        <li class="li2s" id="menu20"><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a><a href="#" class="link2"><img src="img/z_pic3.png" /></a><a href="#" class="link2"><img src="img/z_pic4.png" /></a><a href="#" class="link2"><img src="img/z_pic1.png" /></a><a href="#" class="link2"><img src="img/z_pic2.png" /></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--right-->
+  <div class="clear"></div>
+</div>
+<!--container-->
+</body>
+</html>

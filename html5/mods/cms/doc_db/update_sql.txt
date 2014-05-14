@@ -1,0 +1,15 @@
+﻿-- 2012/1/30
+-- 抓取phpcms记录表
+CREATE TABLE `cms_cms_history` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `phpcmsid` mediumint(8) unsigned NOT NULL default '0',
+  `inputtime` int(10) unsigned NOT NULL default '0' ,
+  `nowcmsid` mediumint(8) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`) ,
+  UNIQUE KEY `phpcmsinput` (`phpcmsid`,`inputtime`)
+) ENGINE=MyISAM ;
+
+
+
+
+

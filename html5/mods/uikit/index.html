@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UIKit - Modern UI components for a modern web</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" id="iphone-viewport" content="minimum-scale=1.0, maximum-scale=2.0, width=device-width">
+    <script src="jquery.js"></script>
+    <script src="dialog.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      $(function(){        
+        $('.confirm').click(function(){
+          ui.confirm('are you sure?')
+            .closable()
+            .show(function(ok){
+              if (ok) ui.dialog('done!').show().hide(1500);
+              else ui.dialog('never-mind').show().hide(1500);
+            });
+          return false;
+        });
+		});
+       
+    </script>
+  </head>
+  <body>
+		<ul>
+		  <li><a href="#" class="confirm">scale</a></li>
+		</ul>
+
+  </body>
+</html>

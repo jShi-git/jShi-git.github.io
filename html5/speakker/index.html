@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>python脚本抓取邻居的耳朵推荐音乐</title>
+	<meta charset="UTF-8">
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="speakker-big-1.2.04r140.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			projekktor('.projekktor', {
+				
+			});
+		});
+	</script>
+	<style type="text/css">
+		* {
+			margin:0;
+			padding:0;
+			border:0;
+		}
+		body {
+			background:#60667b;
+			font: normal normal 14px/12px Tahoma, Arial, Helvetica, Verdana, sans-serif;
+			text-shadow: 0px -1px 0px #3f4353;
+			color:#fff;
+		}
+		.inside {
+			width: 100%;
+			text-align:center;
+			margin:150px 0px;
+			line-height:40px;
+		}
+		h2{color:#fff;}
+		h2 a{color:#fff;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="inside">
+			<h1>邻居的耳朵推荐音乐(python脚本抓取生成JSON)</h1>
+			<h2><a href="">点击查看实现方法</a></h2>
+		</div>
+
+		<!-- this is where Speakker will sit on. Note that all classes are obligatory. -->
+		<!-- "dark" can be replaced by "light" to change the color scheme -->
+		<audio class="projekktor speakker dark">
+			<source src="playlist.json" type="application/json"/>
+		</audio>
+
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$(".skPlay, .skOpener").trigger("click")
+		})
+	</script>
+</body>
+</html>

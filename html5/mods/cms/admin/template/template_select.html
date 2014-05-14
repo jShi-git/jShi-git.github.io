@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>文档管理</title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+</head>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+  
+<!--  内容列表   -->
+<form name="form2">
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="10" background="skin/images/tbg.gif">&nbsp;文档列表&nbsp;</td>
+</tr>
+<{if $list}>
+<tr align="center" bgcolor="#FAFAF1" height="22">
+	<td width="6%">ID</td>
+	<td width="20%">模版名</td>
+	<td width="28%">模版地址</td>
+	<td width="28%">是否使用中</td>
+	<td width="28%">操作</td>
+</tr>
+<{foreach from=$list item=item}>
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+	<td><{$item.id}></td>
+	<td><{$item.template}></td>
+	<td><{$item.path}></td>
+	<td><{if $item.used==1}>是<{else}>否<{/if}></td>
+	<td><a href="./index.php?c=admin_template&m=select&id=<{$item.position}>&tid=<{$item.id}>">应用此模版</a></td>
+</tr>
+<{/foreach}>
+<{/if}>
+
+
+<tr align="right" bgcolor="#EEF4EA">
+	<td height="36" colspan="10" align="center"><!--翻页代码 --></td>
+</tr>
+</table>
+
+</form>
+
+</body>
+</html>

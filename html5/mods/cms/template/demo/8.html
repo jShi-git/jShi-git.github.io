@@ -1,0 +1,43 @@
+<{include file='./header.html'}>
+
+<div class="cont_bd">
+    <ul data-role="listview" data-inset="true" class="xs_list2">
+	<li data-role="list-divider">我最近看的章节</li> 
+	<{if $lastlist }>
+	<{foreach item=item from=$lastlist}>
+	<li data-role="list-divider"><a href="<{$item.url}>"><span><{$item.novel_name}> 章节 <{$item.cms_name}><span> </a> </li> 
+	<{/foreach}>
+	<{else}>
+	暂无
+	<{/if}>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true" class="xs_list2"> 
+	<li data-role="list-divider">我最近看的书</li> 
+
+	<{if $novellist }>
+	<{foreach item=item from=$novellist}>
+	<li data-role="list-divider"><a href="<{$item.url}>"><span><{$item.novel_name}> 作者 <{$item.author_name}><span></a> </li> 
+	<{/foreach}>
+	<{else}>
+	暂无
+	<{/if}>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true" class="xs_list3 xs_list4"> 
+        <li>
+        	<span>我的积分:0</span>  <span>等级:<{$detail.level}></span>  <span>头衔:无</span> <span>我的金币:无</span> <span><a href="#">去充值</a></span>
+        </li>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true">
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+	</ul>
+    
+</div>
+    <!--Footer-->
+	<{include file='./footer.html'}>
+</body>
+</html>

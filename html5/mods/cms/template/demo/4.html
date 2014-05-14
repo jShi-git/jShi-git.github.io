@@ -1,0 +1,38 @@
+<{include file='./header.html'}>
+<div class="cont_bd">
+	
+    <div data-role="header" data-theme="d"> 
+	 <h1>小说书名</h1> 
+	</div> 
+    
+    <div class="ui-body ui-body-d">
+        <div class="introd">
+              <div class="pic"><img src="./style/images/no_img.png"></div>
+              <ul>
+                <li>标题：<em><{$detail_novel.name}></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：<{$detail_novel.author_name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>最新章节：<{if $cmslist.0.id}>【<{$cmslist.0.name}>】<{else}>暂无<{/if}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新时间：<{if $cmslist.0.id}>【<{$cmslist.0.times|date_format:"%y-%m-%d %H:%M:%S"}>】<{else}>暂无<{/if}></li>
+                <li><em>小说简介：</em>
+				<{$detail_novel.detail}>
+				</li>
+                <li><a href="#" data-role="button" data-inline="true">查看作者</a>
+                <a href="./detail.php?m=contents&id=<{$detail_novel.id}>" data-role="button" data-inline="true">查看目录</a><a href="#" data-role="button" data-inline="true">分享到微博</a><a href="#" data-role="button" data-inline="true">下载小说</a><a href="./detail.php?m=contents&id=<{$detail_novel.id}>" data-role="button" data-inline="true">>>在线看小说 </a></li>
+                <li class="pages_sy">
+				<p /><p />
+                </li>
+                <li><a href="javascript:history.go(-1);">回到上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">回到排行榜</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./index.php?cid=<{$detail_novel.cat}>">回到分类首页</a></li>
+             </ul>
+        </div>
+    </div>
+    
+    <ul data-role="listview" data-inset="true" class="mt"> 
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+    </ul>
+</div>
+    <!--Footer-->
+    <div data-role="footer" class="footer-docs ui-footer ui-bar-a ui-footer-fixed fade ui-fixed-overlay" data-theme="a" data-position="fixed" role="contentinfo">
+        <h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><font><font>Copyright©2011-2014 手机版 版权所有</font></font></h1>
+    </div>
+</body>
+</html>

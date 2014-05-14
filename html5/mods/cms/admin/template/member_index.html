@@ -1,0 +1,95 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>文档管理</title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+</head>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+<tr>
+ <td height="26" background="skin/images/newlinebg3.gif">
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td align="center">
+    <input type='button' class="coolbg np" onClick="location='index.php?c=admin_member&m=add';" value='添加管理员' />
+    <input type='button' class="coolbg np" onClick="location='index.php?c=admin_member&m=index';" value='管理员列表' />
+    <input type='button' class='coolbg np' onClick="location='';" value='管理员日志' />
+ </td>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+  
+<!--  内容列表   -->
+<form name="form2">
+
+<table width="98%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="7" background="skin/images/tbg.gif">&nbsp; 管理员列表&nbsp;</td>
+</tr>
+
+<tr align="center" bgcolor="#FAFAF1" height="22">
+	<td width="5%">ID</td>
+	<td width="16%">用户名</td>
+	<td width="16%">用户Email</td>
+	<td width="16%">创建时间</td>
+	<td width="16%">最后登入时间</td>
+	<td width="16%">最后登入ip</td>
+	<td width="10%">操作</td>
+</tr>
+<{if empty($member_list)}>
+<tr>
+<td colspan="7" >&nbsp; 没有数据&nbsp;</td>
+</tr>
+<{else}>
+<{foreach from=$member_list item=member}>
+<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='#FCFDEE';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22" >
+	<td><{$member.admin_id}></td>
+	<td><{$member.admin_name}></td>
+	<td><{$member.admin_email}></td>
+	<td><{$member.admin_create_time|date_format:"%Y-%m-%d %H:%I:%S"}></td>
+	<td><{$member.admin_login_time|date_format:"%Y-%m-%d %H:%I:%S"}></td>
+	<td><{$member.admin_login_ip}></td>
+	<td><a href="index.php?c=admin_member&m=update&id=<{$member.admin_id}>">编辑</a> | <a href="101">删除</a></td>
+</tr>
+<{/foreach}>
+<{/if}>
+<tr bgcolor="#FAFAF1">
+<td height="28" colspan="7">
+</td>
+</tr>
+<tr align="right" bgcolor="#EEF4EA">
+	<td height="36" colspan="7" align="center"><div style="width:360px;margin:0 auto;"><!--翻页代码 --><{$page_str}></div></td>
+</tr>
+</table>
+
+</form>
+
+<!--  搜索表单  -->
+<form name='form3' action='index.php?c=admin_member&m=index' method='post'>
+<input type='hidden' name='dopost' value='' />
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+  <tr bgcolor='#EEF4EA'>
+    <td background='skin/images/wbg.gif' align='center'>
+      <table border='0' cellpadding='0' cellspacing='0'>
+        <tr>
+        <td width='70'>
+          用户名：
+        </td>
+        <td width='160'>
+          	<input type='text' name='name' value='' style='width:150px' />
+        </td>
+        <td>
+          <input name="imageField" type="image" src="skin/images/frame/search.gif" width="45" height="20" border="0" class="np" />
+        </td>
+       </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

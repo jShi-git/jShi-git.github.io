@@ -1,0 +1,29 @@
+body{
+    padding:0px;
+    margin:0px;
+}
+
+.appGallery{
+    overflow:hidden;
+}
+
+.appGallery ul{
+    list-style:none;
+    position:relative;
+    margin:0;
+	padding:0;
+}
+
+.appGallery li{
+    display:block;
+    float:left;
+	text-indent:2em;
+
+}
+
+
+.imageHandler{
+    position:absolute;
+    z-index:30;
+    background-image:url('../images/trans.png');
+}

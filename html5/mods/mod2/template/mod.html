@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>文章页</title>
+<link rel="stylesheet"  href="../style/css/jquery.mobile-1.0rc2.min.css" />  
+<link rel="stylesheet" href="../style/css/jqm-docs.css"/>
+<link rel="stylesheet" href="../style/css/jquery.swipegallery.css"/>
+<link rel="stylesheet" href="../style/css/add.css"/> 
+<script src="../style/js/jquery-1.6.4.min.js"></script> 
+<!--翻页-->
+<script type="text/javascript" src="../style/js/jquery.swipegallery.js"></script> 
+<script type="text/javascript" src="../style/js/jquery.mobile.js"></script> 
+<script type="text/javascript" language="Javascript">
+	$(window).load(function() { 
+		$('#swipeallery').swipeGallery({autoHeight: false});  
+	});
+</script>
+
+</head> 
+<body>
+<!--Navigation-->
+<div data-role="header" data-position="fixed" class="ui-header ui-header-fixed fade ui-fixed-overlay">
+	<div data-role="navbar"> 
+         <ul> 
+             <li><a href="index.html" data-icon="grid" class="ui-btn-active">武侠</a></li> 
+             <li><a href="index.html" data-icon="star">言情</a></li> 
+             <li><a href="index.html" data-icon="gear">科幻</a></li> 
+             <li><a href="index.html" data-icon="plus">文学</a></li> 
+             <li><a href="index.html" data-icon="info">漫画</a></li> 
+         </ul> 
+	</div>		
+</div>
+
+
+    
+	
+<!--Content-->
+
+<div class="bd_con novel_bd">
+	 <div class="novel_list">
+     	  <div class="pic">
+   	      	   <img src="../style/images/slide3.jpg">
+          </div>
+          <div class="bd">
+          	   <h3>金庸世界里的道士</h3>
+          	   <ul>
+               	  <li><b>作者：</b>金鹰&nbsp;&nbsp;&nbsp;&nbsp;<b>作者的其它作品：</b>凌天传说</li>
+               	  <li><b>总点击：</b>4372761&nbsp;&nbsp;&nbsp;&nbsp;<b>月点击：</b>180235&nbsp;&nbsp;&nbsp;&nbsp;<b>周点击：</b>18789</li>
+                  <li><b>阅读指数：</b>9.5</li>
+                  <li><b>人气指数：</b><span><i class="lever" style="width:40%"></i></span></li>
+                  <li><b>总字数：</b>700129</li>
+                  <li><b>小说类别：</b>异界大陆</li>
+                  <li>你上次看到了<a href="content.html"><b>第32章</b></a></li>
+               </ul>
+          </div>
+          <div class="clerfix"></div>
+          <div class="info_list">
+          	   <h4><span>共123章</span>金庸世界里的道士</h4>
+          	   <ul>
+               	  <li><a href="content.html">第一章：若是生，伴君天下舞！</a></li>
+                  <li><a href="content.html">第二章：再从头，好不放手？</a></li>
+                  <li><a href="content.html">第三章：伪君子</a></li>
+                  <li><a href="content.html">第四章：九劫剑的秘密</a></li>
+                  <li><a href="content.html">第五章：天地不移，江流石不转！</a></li>
+                  <li><a href="content.html">第六章：峰回路转春秋丹</a></li>
+                  <li><a href="content.html">第七章：大师兄肚子疼？</a></li>
+                  <li><a href="content.html">第八章：金血玄参【求推荐票！】</a></li>
+               </ul>
+          </div>
+     </div>
+</div>
+	
+<!--Footer-->
+<div data-role="footer" data-id="foo1" data-position="fixed"> 
+    <div data-role="navbar"> 
+        <ul> 
+            <li><a href="about_us.html" class="ui-state-persist">关于我们</a></li> 
+            <li><a href="contact_us.html">联系我们</a></li> 
+            <li><a href="proposal.html">提交建议</a></li> 
+        </ul> 
+    </div>
+</div>
+</body>
+</html>

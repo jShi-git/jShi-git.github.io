@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>top</title>
+<link href="skin/css/base.css" rel="stylesheet" type="text/css">
+
+<style>
+body { padding:0px; margin:0px; }
+#tpa {
+	color: #009933;
+	margin:0px;
+	padding:0px;
+	float:right;
+	padding-right:10px;
+}
+
+#tpa dd {
+	margin:0px;
+	padding:0px;
+	float:left;
+	margin-right:2px;
+}
+
+#tpa dd.ditem {
+	margin-right:8px;
+}
+
+#tpa dd.img {
+  padding-top:6px;
+}
+
+div.item
+{
+  text-align:center;
+	background:url(skin/images/frame/topitembg.gif) 0px 3px no-repeat;
+	width:82px;
+	height:26px;
+	line-height:28px;
+}
+
+.itemsel {
+  width:80px;
+  text-align:center;
+  background:#226411;
+	border-left:1px solid #c5f097;
+	border-right:1px solid #c5f097;
+	border-top:1px solid #c5f097;
+	height:26px;
+	line-height:28px;
+}
+
+*html .itemsel {
+	height:26px;
+	line-height:26px;
+}
+
+a:link,a:visited {
+ text-decoration: underline;
+}
+
+.item a:link, .item a:visited {
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.itemsel a:hover {
+	color: #ffffff;
+	font-weight: bold;
+	border-bottom:2px solid #E9FC65;
+}
+
+.itemsel a:link, .itemsel a:visited {
+	font-size: 12px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.itemsel a:hover {
+	color: #ffffff;
+	border-bottom:2px solid #E9FC65;
+}
+
+.rmain {
+  padding-left:10px;
+}
+</style>
+</head>
+<body bgColor='#A2D27B'>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="skin/images/frame/topbg.gif">
+  <tr>
+    <td width='20%' height="60"><img src="skin/images/frame/logo.gif" /></td>
+    <td width='80%' align="right" valign="bottom">
+    	<table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td align="right" height="26" style="padding-right:10px;line-height:26px;">
+        	您好，欢迎使用内容管理系统！
+        	&nbsp;
+      </td>
+      </tr>
+      <tr>
+        <td align="right" height="34" class="rmain">
+		<dl id="tpa">
+			<dd></dd>
+		</dl>
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<style>
+.admin_index {
+    margin: 100px auto 0;
+    padding: 25px 0 0;
+    width: 350px;
+}
+.admin_box {
+    padding: 15px 0 35px;
+    text-align: center;
+}
+
+</style>
+<form action="" method="post" name="form1" onSubmit="return f_login();">
+<div class="admin_index">
+	<div class="admin_box">
+		<div class="">
+			帐号：
+			<input name="f_name" id="f_name" type="text" />
+		</div>
+		<div class="" style="margin-top:12px;">
+			密码：
+			<input name="f_pwd" type='password' id="f_pwd" />
+		</div>
+		
+		<div style="margin-top:12px;">
+			<input name="" type="submit" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input name="" type="button" value="重置" onclick="reset();return   false" />
+		</div>
+	</div>
+	<div class="admin_ft"></div>
+</div>
+<input type="hidden" name="c" value="login" />
+<input type="hidden" name="m" value="gotologin" />
+</form>
+<SCRIPT type="text/javascript" >
+function f_login() {
+	if(document.getElementById('f_name').value=="") {
+		alert("请输入");
+		return false;
+	}
+	if(document.getElementById('f_pwd').value=="") {
+		alert("请输入密码");
+		return false;
+	}
+	return true;
+}
+</SCRIPT>
+
+
+
+</body>
+</html>

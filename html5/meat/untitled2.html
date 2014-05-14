@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Restaurant</title>
+<link rel="stylesheet" type="text/css" href="css/newcss.css">
+<script language="javascript"  src="js/iscroll.js"></script>
+<script type="text/javascript">
+
+//////////////////////////
+function selectTab(k){
+	alert(k);
+	var ul2 = '<ul class="ul2">';
+	var curCategoryId = dataObj.category[3].id ;
+ 
+	  //查找这个分类下所有的食物
+	var allFood = [];
+	for(var i = 0;i<dataObj.categorygoods.length;i++){
+		if( curCategoryId ==  dataObj.categorygoods[i].categoryid ){
+			allFood.push( dataObj.categorygoods[i].gid );
+		}	
+	}
+ 
+	var getFood = [];
+	
+	for(var p = 0;p<allFood.length;p++)
+	{
+		for(var q=0;q<dataObj.goods.length;q++)
+		{
+			if( parseInt(allFood[p]) == parseInt(dataObj.goods[q].gid) )
+			{
+			
+				getFood.push( dataObj.goods[q].image );
+				
+			}
+		}
+	}
+	
+	for(var n = 0;n<getFood.length;n++)
+	{
+	ul2 += '<li class="li2"><a href="#" class="link2"><img src="' + getFood[n]+ '" /></a></li>';
+	
+	}
+	ul2 += '</ul>';
+
+document.getElementById("scrol2").innerHTML=ul2; 
+}
+var dataObj;
+function hi()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","http://demos.shizuwu.cn/meat/example.json",false);
+xmlhttp.send();
+//document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+dataObj = JSON.parse(xmlhttp.responseText);
+ 
+ 
+ var allFood = [];
+  var ul = '<ul class="ul1">';
+   
+ for (var i = 0, len = dataObj.category.length; i < len; i++) {
+          ul += '<li class="li1" onclick="selectTab(\''+dataObj.category[i].name+'\')"><a href="#" class="link1">' + dataObj.category[i].name + '</a></li>';
+		  
+      }
+	  
+ul += '</ul>';
+
+//////////////////////////
+
+document.getElementById("scroll").innerHTML=ul;   
+
+}
+</script>
+<script>
+(function(){
+	var myScroll;
+	function loaded() {
+		myScroll = new iScroll('scroll',{vScrollbar: false});
+	}
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+})();
+
+
+(function(){
+	var myScrol2;
+	function loaded2() {
+		myScroll = new iScroll('scrol2',{vScrollbar: false});
+	}
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded2, 10); }, false);
+})(); 
+</script>
+</head>
+<body onload="hi()">
+<!--<div id="myDiv">
+  <h2>Let AJAX change this text</h2>
+</div>
+<button type="button" onClick="loadXMLDoc()">通过 AJAX 改变内容</button>-->
+<div class="container">
+  <div class="left" id="left">
+    <div class="left_nav" id="scroll"> </div>
+    <!--left_nav-->
+  </div>
+  <!--left-->
+  <div class="right">
+    <div class="right_info" id="scrol2" > </div>
+    <!--right_info-->
+  </div>
+  <!--right-->
+</div>
+<!--container-->
+</body>
+</html>
+>
+</body>
+</html>

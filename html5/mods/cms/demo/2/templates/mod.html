@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>文章页</title>
+<link rel="stylesheet"  href="./style/css/jquery.mobile-1.0rc2.min.css" />  
+<link rel="stylesheet" href="./style/css/jqm-docs.css"/> 
+<link rel="stylesheet" href="./style/css/add.css"/> 
+<script src="./style/js/jquery-1.6.4.min.js"></script> 
+<script src="./style/js/jquery.mobile.themeswitcher.js"></script> 
+<script src="./style/js/jqm-docs.js"></script> 
+<script src="./style/js/jquery.mobile-1.0rc2.min.js"></script> 
+
+</head> 
+<body>
+<{include file="header.html"}>
+	
+<!--Content-->
+
+<div class="bd_con novel_bd">
+	 <div class="novel_list">
+     	  <div class="pic">
+   	      	   <img src="./style/images/slide3.jpg">
+          </div>
+          <div class="bd">
+          	   <h3><{$detail.name}></h3>
+          	   <ul>
+               	  <li><b>作者：</b><{$detail.author}></li>
+               	  <li><b>总点击：</b><{$detail.views}>&nbsp;&nbsp;&nbsp;&nbsp;<b>月点击：</b><{$detail.views}>&nbsp;&nbsp;&nbsp;&nbsp;<b>周点击：</b><{$detail.views}></li>
+                  <li><b>阅读指数：</b>9.5</li>
+                  <li><b>人气指数：</b><span><i class="lever" style="width:40%"></i></span></li>
+                  <li><b>小说类别：</b><{$detail.cat_name}></li>
+                  <!--<li>你上次看到了<a href="content.html"><b>第32章</b></a></li>-->
+               </ul>
+          </div>
+          <div class="clerfix"></div>
+          <div class="info_list">
+          	   <h4><span>共<{$num_total}>章</span><{$detail.name}></h4>
+          	   <ul>
+			   <{foreach from=$datalist item=item}>
+               	  <li><a href="./content.php?id=<{$item.id}>"><{$item.name}></a></li>
+			   <{/foreach}>
+               </ul>
+          </div>
+     </div>
+</div>
+<{include file="footer.html"}>
+</body>
+</html>

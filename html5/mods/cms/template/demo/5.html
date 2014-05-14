@@ -1,0 +1,33 @@
+<{include file='./header.html'}>
+<div class="cont_bd">
+	<h3 class="t_c">标题：<{$detail_novel.name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：<{$detail_novel.author_name}></h3>
+    <ul data-role="listview" data-inset="true" class="xs_list"> 
+        <li data-role="list-divider">目录</li> 
+        <{if $datalist}>
+		<{foreach item=item from=$datalist name=record}>
+        <li class="fl_tab_list">
+        	<a href="./detail.php?id=<{$item.id}>">
+            <span><{$item.name}></span>
+            <span class="time_span">更新时间：<{$item.times|date_format:"%y-%m-%d %H:%M:%S"}></span>
+            <span class="top_span">排名：<{$smarty.foreach.record.index+1}></span></a>
+        </li>
+		<{/foreach}>
+		<{/if}>
+
+		<li class="custom_ui pages_sy ui-bar-d">
+		<{$page_str}>
+        </li>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true"> 
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+		</ul>
+</div>
+    <!--Footer-->
+    <div data-role="footer" class="footer-docs ui-footer ui-bar-a ui-footer-fixed fade ui-fixed-overlay" data-theme="a" data-position="fixed" role="contentinfo">
+        <h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><font><font>Copyright©2011-2014 手机版 版权所有</font></font></h1>
+    </div>
+</body>
+</html>

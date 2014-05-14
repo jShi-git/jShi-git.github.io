@@ -1,0 +1,70 @@
+<{include file='./header.html'}>
+<div class="cont_bd">
+    <ul data-role="listview" data-inset="true"> 
+        <li data-role="list-divider">我常看的小说</li>
+        <{if $smarty.session.member.username}>
+			<{if $novellist }>
+			<{foreach item=item from=$novellist}>
+			<li data-role="list-divider"><a href="<{$item.url}>"><span><{$item.novel_name}> 作者 <{$item.author_name}><span></a> </li> 
+			<{/foreach}>
+			<{else}>
+			暂无
+			<{/if}>
+		<{else}>
+		<li><a href="./user.php?m=update">请完善信息</a></li>
+		<{/if}>
+    </ul> 
+
+
+
+    <ul data-role="listview" data-inset="true"> 
+        <li data-role="list-divider">名作家</li> 
+		  <{if $authorlist }>
+		  <{foreach item=item from=$authorlist}>
+		  <li data-role="list-divider"><a href="<{$item.url}>"><{$item.name}></a> </li> 
+		  <{/foreach}>
+		  <{/if}>
+    </ul> 
+
+    <ul data-role="listview" data-inset="true"> 
+        <li data-role="list-divider">热门小说</li> 
+		<{if $hotlist }>
+		<{foreach item=item from=$hotlist}>
+		<li data-role="list-divider"><a href="<{$item.url}>"><{$item.name}></a> </li> 
+		<{/foreach}>
+		<{/if}>
+
+        <li data-role="list-divider" class="custom_ui"> 热门<a href="#">查看更多</a></li>
+    </ul> 
+    
+    <ul data-role="listview" data-inset="true"> 
+      <li data-role="list-divider">完本小说</li> 
+			<{if $endlist }>
+			<{foreach item=item from=$endlist}>
+			<li data-role="list-divider"><a href="<{$item.url}>"><{$item.name}></a> </li> 
+			<{/foreach}>
+			<{/if}>
+			<li data-role="list-divider" class="custom_ui">共<{$endCount}>本 <a href="./search.php?end=1">查看更多</a></li>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true"> 
+      <li data-role="list-divider">连载小说</li> 
+			<{if $serilist }>
+			<{foreach item=item from=$serilist}>
+			<li data-role="list-divider"><a href="<{$item.url}>"><{$item.name}></a> </li> 
+			<{/foreach}>
+			<{/if}>
+			<li data-role="list-divider" class="custom_ui">共<{$seriCount}>本 <a href="./search.php?end=0">查看更多</a></li>
+    </ul>
+    
+    <ul data-role="listview" data-inset="true">
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+	</ul>
+    
+</div>
+    <!--Footer-->
+	<{include file='./footer.html'}>
+</body>
+</html>

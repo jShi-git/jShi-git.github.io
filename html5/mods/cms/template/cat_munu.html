@@ -1,0 +1,12 @@
+			<li> 
+				<h3>小说分类</h3> 
+				<p><span class="sub_n">
+          <b>按内容分类：</b>
+		  <{if $catlist }>
+		  <{foreach item=item from=$catlist}>
+		  <a href="<{$item.url}>"><{$item.name}></a> 
+		  <{/foreach}>
+		  <{/if}>
+		  &nbsp;&nbsp;&nbsp;&nbsp;
+          <b>写作状态分类：</b><a href="#">完本</a> <a href="#">连载</a></span></p> 
+			</li>

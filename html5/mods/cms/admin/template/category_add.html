@@ -1,0 +1,75 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>文档管理</title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+</head>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+<tr>
+ <td height="26" background="skin/images/newlinebg3.gif">
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td align="center">
+    <input type='button' class="coolbg np" onClick="location='index.php?c=admin_category&m=index';" value="分类列表" />
+ </td>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+
+<form name='form_add' action="index.php?c=admin_category&m=<{ if $is_edit=='edit' }>edit<{ else }>add<{ /if }>" method='post'>
+<input type="hidden" name="is_submit" value="1" />
+<input type="hidden" name="edit_id" value="<{ $edit_id }>" />
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="2" background="skin/images/tbg.gif">&nbsp; 管理分类&nbsp; <{ if $is_edit=='edit' }>编辑<{ else }>添加<{ /if }></td>
+</tr>
+<tr align="center" height="28">
+	<td width="40%" align="right">分类名称：</td>
+	<td width="60%" align="left"><input type='text' name="name" value="<{ if $is_edit=='edit' }><{ $edit_row.name }><{ /if }>" style='width:200px' /></td>
+</tr>
+<tr align="center" height="28">
+	<td width="40%" align="right">分类小标题：</td>
+	<td width="60%" align="left"><input type='text' name="nickname" value="<{ if $is_edit=='edit' }><{ $edit_row.nickname }><{ /if }>" style='width:200px' /></td>
+</tr>
+<tr align="center" height="28">
+	<td width="40%" align="right">上级分类：</td>
+	<td width="60%" align="left">
+		<select name="fid" id="category_parent_id">
+			<option value="0">顶级分类</option><{ $cat_options }>
+		</select>
+		<{ if $is_edit=='edit' }>
+		<script type="text/javascript">
+			document.getElementById('category_parent_id').value='<{ $edit_row.fid }>';
+		</script>
+		<{ /if }>
+	</td>
+</tr>
+<tr align="center" height="28">
+	<td width="40%" align="right">简介：</td>
+	<td width="60%" align="left"><input type='text' name="intro" value="<{ if $is_edit=='edit' }><{ $edit_row.intro }><{ /if }>" style='width:200px' /></td>
+</tr>
+<tr align="center" height="28">
+	<td  colspan="2" align="center">
+		<input name="tijiao" type="button" value="提交" width="45" height="20" border="0" class="np" onclick="javascript:go_submit('<{ $is_edit }>');" /></td>
+</tr>
+  
+</table>
+</form>
+
+<script type="text/javascript">
+function go_submit(type){
+	if(type=='add'){
+		document.form_add.submit();
+	}
+	else if(type=='edit'){
+		document.form_add.submit();
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>添加到购物车动画</title>
+	<style type="text/css">
+		html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;}
+		body { margin: 0; font-size: 15px; line-height: 1.231; background: #E2EAED;}
+		ul{ margin: .3em 0; padding: 0 0 0 18px; }
+		li{ margin:.25em 0}
+		img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+		#container{
+			width:980px;
+			margin:30px auto;
+		}
+		#content{
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			border-radius:5px;
+			-webkit-box-shadow:0 0 5px rgba(0,0,0,.21);
+			-moz-box-shadow:0 0 5px rgba(0,0,0,.21);
+			box-shadow:0 0 5px rgba(0,0,0,.21);
+			background:#fff;
+		}
+
+		.cartBox{
+			margin-right: 4px;
+			color: white;
+			z-index: 100100;
+			width: 68px;
+			zoom: 1;
+			position: fixed;
+			_position:absolute;
+			bottom:0px;
+			right:0px;
+		}
+		.cartMain {
+			background: url(http://img03.taobaocdn.com/tps/i3/T1E1rVXaliXXXx2azm-67-64.png) no-repeat;
+			border:1px solid;
+		}
+
+		.cartBox .cartCount {
+			margin-top: 1px;
+			float: left;
+			color: black;
+			height: 31px;
+			position: relative;
+			line-height: 33px;
+			cursor: pointer;
+		}
+		.cartMain .CCNum {
+			padding-left: 38px;
+			display: inline;
+		}
+
+
+		#items{
+			list-style:none;
+		}
+		#items li{
+			float:left;
+			display:inline;
+			margin:15px 15px 0px 20px;
+			z-index:100;
+			transition: transform .4s ease-in;
+			-moz-transition: -moz-transform .4s ease-in;
+			-webkit-transition: -webkit-transform .4s ease-in;
+			-o-transition: -o-transform .4s ease-in;
+		}
+
+		.addAnim{
+			position:absolute;
+			-webkit-transform:scale(0,0) rotate(-180deg);
+			-o-transform:scale(0,0) rotate(-180deg);
+			-moz-transform:scale(0,0) rotate(-180deg);
+			transform:scale(0,0) rotate(-180deg);
+			opacity:.2;
+		}
+
+		#demoShelf .item_image{
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+			<ul id="items">
+				<li><img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1HjPIXeXlXXXRIpZU_013510.jpg_b.jpg"></li>
+				<li><img src="http://img04.taobaocdn.com/bao/uploaded/i8/T1wVGYXiptXXbLmaEW_022451.jpg_b.jpg"></li>
+				<li><img src="http://img03.taobaocdn.com/bao/uploaded/i7/T17Lj2Xf8iXXbxV0g6_061232.jpg_b.jpg"></li>
+				<li><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1GIz_Xd4gXXXxNAEZ_032915.jpg_b.jpg"></li>
+				<li><img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1jBDvXiBaXXXcjaU4_051744.jpg_b.jpg"></li>
+				<li><img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1mVnCXkVoXXXeyrDb_093223.jpg_b.jpg"></li>
+				<li><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1vyrsXmNnXXXfS6.T_012452.jpg_b.jpg"></li>
+				<li><img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1g3bQXeVfXXXpYYZ5_055130.jpg_b.jpg"></li>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+
+	<div class="cartBox" id="cart">
+		<div class="cartMain" title="查看购物车">
+			<span class="cartCount">
+				<span class="CCNum">0</span>
+			</span>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			$("#items li").click(function(){
+				var cart = $("#cart").offset();
+				var cartx = cart.left;
+				var carty = cart.top;
+				var clone = $(this).clone();
+
+				clone.appendTo('#items');
+				clone.css({"position":"absolute","left":$(this).offset().left, "top":$(this).offset().top}).addClass('addAnim');
+				clone.animate({top:carty-125, left:cartx- 95}, 400);
+				$(".CCNum").html(parseInt($(".CCNum").html())+1);
+			});	
+		});
+	</script>
+</body>
+</html>

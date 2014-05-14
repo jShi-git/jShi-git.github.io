@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>文档管理</title>
+<link rel="stylesheet" type="text/css" href="skin/css/base.css">
+<script type="text/javascript" src="skin/js/jquery.js"></script>
+</head>
+<body leftmargin="8" topmargin="8" background='skin/images/allbg.gif'>
+
+<!--  快速转换位置按钮  -->
+<table width="98%" border="0" cellpadding="0" cellspacing="1" bgcolor="#D1DDAA" align="center">
+<tr>
+ <td height="26" background="skin/images/newlinebg3.gif">
+  <table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td align="center">
+		<input type='button' class="coolbg np" value="抓取信息内容" />&nbsp;&nbsp;
+		<input type='button' class="coolbg np" onClick="location='index.php?c=admin_category&m=index';" value="分类列表" />
+ </td>
+ </tr>
+</table>
+</td>
+</tr>
+</table>
+
+<form name='form3' action='' method='' onsubmit="return false;">
+
+<table width='98%'  border='0' cellpadding='1' cellspacing='1' bgcolor='#CBD8AC' align="center" style="margin-top:8px">
+<tr bgcolor="#E7E7E7">
+	<td height="24" colspan="2" background="skin/images/tbg.gif">&nbsp;&nbsp;抓取信息</td>
+</tr>
+<tr bgcolor="">
+	<td height="24" colspan="2" >
+		当前分类：&nbsp;&nbsp;
+		<select name="fid" id="cat_id">
+			<option value="0">顶级分类</option><{ $cat_options }>
+		</select>
+		<{ if $cat_id }>
+		<script type="text/javascript">
+			document.getElementById('cat_id').value='<{ $cat_id }>';
+		</script>
+		<{ /if }>
+	</td>
+</tr>
+<!--tr bgcolor="">
+	<td height="24" colspan="2" >
+		抓取分类：&nbsp;&nbsp;<input type="text" name="" id="scrape_cat_id" value="<{ $cat_id }>" >
+	</td>
+</tr-->
+<tr bgcolor="">
+	<td height="24" colspan="2" >
+		抓取地址：&nbsp;&nbsp;<input type="text" name="" id="scrape_api_url" value="<{ $api_url }>" style="width:600px;" >
+		&nbsp;&nbsp;
+		<input type="button" name="" value="预览" onclick="preview_scrape();">
+	</td>
+</tr>
+<tr bgcolor="">
+	<td height="24" colspan="2" >
+		<div id="">
+			<iframe id="scrape_iframe" width="100%" height="" frameborder="1" src="<{ $api_url }>" style="margin:0;padding:0"></iframe>
+		</div>
+	</td>
+</tr>
+
+<tr align="center" height="28">
+	<td width="40%" align="right"></td>
+	<td width="60%" align="left"></td>
+</tr>
+
+<tr align="center" height="28">
+	<td  colspan="2" align="center">
+		<input type="button" name="" value="抓取" onclick="go_scrape();" >&nbsp;&nbsp;
+		<input type="button" name="" value="停止" onclick="stop_scrape();">&nbsp;&nbsp;
+		<span id="scrape_progress"></span>
+	</td>
+</tr>
+<tr bgcolor="">
+	<td height="24" colspan="2" id="scrape_preview">
+	</td>
+</tr>
+</table>
+
+<input type="hidden" name="scrape_page" id="scrape_page" value="1" >
+<input type="hidden" name="scrape_check" id="scrape_check" value="" >
+</form>
+
+<script type="text/javascript">
+var status_scrape=0;
+
+function ajax_scrape(scrape_api_url,cat_id,scrape_page){
+	if(status_scrape==0){
+		return false;
+	}
+	$.ajax({
+		type: 'POST',
+		url: 'index.php?c=admin_scrape&m=preview',
+		data: {
+			action: 'save',
+			cat_id: cat_id,
+			scrape_page: scrape_page,
+			xml_url: scrape_api_url
+		},
+		success: function(msg){
+			var m=msg.substr(1,4);
+			if(m!='[ok]'){
+				stop_scrape();
+				return false;
+			}
+			if(msg==$("#scrape_check").val()){
+				stop_scrape();
+			}
+			$("#scrape_preview").html(msg);
+			$("#scrape_check").val(msg);
+			++scrape_page;
+			ajax_scrape(scrape_api_url,cat_id,scrape_page);
+		}
+	});
+}
+
+function stop_scrape(){
+	status_scrape=0;
+	$("#scrape_progress").html('抓取停止');
+}
+
+function go_scrape(){
+	status_scrape=1;
+	var scrape_api_url=document.getElementById('scrape_api_url').value;
+	ajax_scrape(scrape_api_url, $("#cat_id").val(), $("#scrape_page").val());
+	$("#scrape_progress").html('抓取中, loading');
+}
+
+function preview_scrape(){
+	var scrape_api_url=document.getElementById('scrape_api_url').value;
+	document.getElementById('scrape_iframe').src=scrape_api_url;
+	$("#scrape_preview").html('');
+	/*$.ajax({
+		type: 'POST',
+		url: 'index.php?c=admin_scrape&m=preview',
+		data: {
+			action: 'look',
+			cat_id: '',
+			xml_url: scrape_api_url
+		},
+		success: function(msg){
+			$("#scrape_preview").html(msg);
+		}
+	});*/
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<{include file='./header.html'}>
+<div class="cont_bd">
+
+	<ul data-role="listview" data-inset="true"> 
+       <{include file='./cat_munu.html'}>
+    </ul>
+		
+</div>
+
+<div class="hce_adv"><img src="./style/images/adv.jpg"></div>    
+
+<div class="cont_bd">
+	<h3>分类小说列表：当前分类 <{$catname}></h3>
+    <ul data-role="listview" data-inset="true" class="top_pop"> 
+       
+        <li class="fl_tab">
+        	<div data-role="navbar" data-grid="d"> 
+			<ul> 
+				<li><a href="<{$curl}>&order=1" <{if $order==1}>class="ui-btn-active"<{/if}>>更新时间</a></li> 
+				<li><a href="<{$curl}>&order=2" <{if $order==2}>class="ui-btn-active"<{/if}>>阅读数</a></li> 
+				<li><a href="<{$curl}>&order=3" <{if $order==3}>class="ui-btn-active"<{/if}>>评论数</a></li> 
+				<li><a href="<{$curl}>&order=4" <{if $order==4}>class="ui-btn-active"<{/if}>>推荐数</a></li> 
+			</ul> 
+		</div>
+        </li>
+        <{if $datalist}>
+		<{foreach item=item from=$datalist name=record}>
+        <li class="fl_tab_list">
+        	<a href="./detail.php?m=cover&id=<{$item.id}>">
+            <span><{$item.name}></span>
+            <span>作者：<{$item.author_name}></span>
+            <span>排名：<{$smarty.foreach.record.index+1}></span></a>
+        </li>
+		<{/foreach}>
+		<{/if}>
+         
+        <li class="custom_ui pages_sy ui-bar-d">
+		<{$page_str}>
+
+		</li>
+    </ul>
+    
+    <ul class="custom2_ui">
+        <li class="ui-bar-d">查看排行榜</li>
+        <li><a href="index.html">周阅读榜</a> <a href="index.html">月阅读榜</a> <a href="index.html">总阅读榜</a></li>
+        <li><a href="index.html">周评论榜</a> <a href="index.html">月评论榜</a> <a href="index.html">总评论榜</a></li>
+        <li><a href="index.html">周推荐榜</a> <a href="index.html">月推荐榜</a> <a href="index.html">总推荐榜</a></li>
+        <li><a href="index.html">周收藏榜</a> <a href="index.html">月收藏榜</a> <a href="index.html">总收藏榜</a></li>
+    </ul>
+
+    <ul data-role="listview" data-inset="true" class="mt"> 
+			<{include file='./download.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+    </ul>
+</div>
+    <!--Footer-->
+    <div data-role="footer" class="footer-docs ui-footer ui-bar-a ui-footer-fixed fade ui-fixed-overlay" data-theme="a" data-position="fixed" role="contentinfo">
+        <h1 class="ui-title" tabindex="0" role="heading" aria-level="1"><font><font>Copyright©2011-2014 手机版 版权所有</font></font></h1>
+    </div>
+</body>
+</html>

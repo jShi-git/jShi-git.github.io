@@ -1,0 +1,55 @@
+<{include file='./header.html'}> 
+<div class="hce_adv"><img src="./style/images/adv.jpg"></div>     
+
+<div class="cont_bd">
+<form name="user_form" action="./user.php&m=update" method="POST">
+    <div data-role="header" data-theme="d"> 
+	 	 <h1>账号信息</h1> 
+	</div> 
+    
+    <div class="ui-body ui-body-d">
+         <div class="lg_box">
+         	  <ul>
+              	 <li>
+                     <div data-role="fieldcontain"> 
+                     <label for="name">账号:</label> 
+                     <input type="text" name="name" id="name" value=""  /> 
+                    </div>
+            	</li>
+                <li>              
+                     <span class="lg_btn2"><button type="submit" onClick="document.user_form.submit();" data-role="button" data-rel="back" data-theme="b">修改</a></span>
+            	</li>
+                <li>&nbsp;</li>
+                <li>你也可以用微博授权登录:<a href="#">[博授权登录]</a></li>
+              </ul>	
+         </div>
+    </div>
+    
+    <div data-role="header" data-theme="d" class="mt"> 
+	 	 <h1>修改信息</h1> 
+	</div> 
+    
+    <div class="ui-body ui-body-d">
+         <div class="lg_box">
+         	  <ul>
+              	 <li>
+                     <div data-role="fieldcontain"> 
+                     <label for="name">密码:</label> 
+                     <input type="password" name="password" id="password" value=""  /> 
+                    </div>
+            	</li>
+              </ul>	
+         </div>
+    </div>
+    
+    <ul data-role="listview" data-inset="true" class="mt"> 
+			<{include file='./cat_munu.html'}>
+			<{include file='./ad.html'}>
+			<{include file='./copr.html'}>
+    </ul>
+</form>
+</div>
+    <!--Footer-->
+	<{include file='./footer.html'}>
+</body>
+</html>

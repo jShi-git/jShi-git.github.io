@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>首页</title>
+<link rel="stylesheet"  href="./style/css/jquery.mobile-1.0rc2.min.css" />  
+<link rel="stylesheet" href="./style/css/jqm-docs.css"/> 
+<link rel="stylesheet" href="./style/css/add.css"/> 
+<script src="./style/js/jquery-1.6.4.min.js"></script> 
+<script src="./style/js/jquery.mobile.themeswitcher.js"></script> 
+<script src="./style/js/jqm-docs.js"></script> 
+<script src="./style/js/jquery.mobile-1.0rc2.min.js"></script> 
+</head> 
+<body>
+<{include file="header.html"}>
+    <!--Content-->	
+	<div class="hce_adv"><img src="./style/images/adv.jpg"></div>
+    
+
+			<div class="df">	
+                <ol data-role="listview">
+					<{foreach from=$datalist item=item}>
+                    <li><a href="./mod.php?id=<{$item.id}>"><{$item.name}></a></li> 
+					<{/foreach}>
+                </ol> 
+			</div>
+<{include file="footer.html"}>
+</body>
+</html>

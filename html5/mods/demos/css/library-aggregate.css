@@ -1,0 +1,69 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}
+
+.share-this-2{float:right;}#tdi_imageDispDiv .share-this-2{float:none;display:inline-block;}a.share,.nameplate-download-actions a.share{cursor:pointer;visibility:hidden;padding:4px 5px 4px 20px!important;font-size:12px!important;line-height:18px!important;background-position:center left!important;background-repeat:no-repeat!important;background-color:transparent!important;}a.share.show{visibility:inherit;display:inline-block;}.group-flip a.share,.view-innovation-sync-sync-commands a.share.show,.view-innovation-sync-life-with-sync a.share.show{display:none;}.group-flip.active a.share.show{visibility:inherit;display:inline-block;}.skin-ford .share,.skin-F-150 .share,.skin-SuperDuty .share,.nameplate-download-actions a.share,.innovation-sync-nav-menu a.share{background-image:url("/resources/ford/general/share/Share-Button.png");width:40px;height:18px;color:#31a1db;font-family:fordngbs-antenna,Arial,sans-serif;font-weight:normal;}
+
+html{overflow-y:scroll;background:#fff;color:#000;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{font-size:16px;font-family:arial;margin:auto;}hr{clear:both;background-color:#d0d1d1;color:#d0d1d1;width:100%;height:1px;border:none;margin:0 0 1em 0;}a{text-decoration:none;cursor:pointer;}em{font-weight:bold;}strong{font-weight:bold;}sup{font-style:italic;font-size:70%;vertical-align:text-top;}div#page{background-repeat:no-repeat;background-position:center top;min-width:960px;max-width:1200px;margin:0 auto;position:relative;}div#header{width:960px;z-index:1000;}div#view-container{background-repeat:no-repeat;background-position:center top;}.view-bd,#view-hd,#view-ft,div#footer{width:100%;}div#view,#view-ft{margin:0 auto;width:960px;}div#header,#view-hd{position:absolute;top:0;left:50%;margin-left:-480px;}div#view{position:relative;padding-top:10px;width:960px;}.view-bd{margin:43px 0;}body.ie7 .view-bd{margin-top:132px;}#view-hd{top:83px;}.view-bd .stacked-cap{display:block;height:4px;}.view-bd .stacked-cap-top{background:none;}.view-bd .stacked-cap-bottom{background:none;}.view-bd .stacked-box{background:none;color:#000;}
+
+
+/**/
+.grid .gridholder{position:relative;}.grid .gridholder .polaroid{position:absolute;top:0;left:0;}.polaroid .open,.polaroid .min,.polaroid .closed{display:none;}.polaroid .active.open,.polaroid .active.closed,.polaroid .active.min{display:block;}.filter_billboard .billboard{display:none;}.filter_billboard .billboard.active{display:block;}
+body #page{background-color:#D6E0E1;max-width:none;min-width:0;}#view-bd{font-family:fordngbs-antenna,Arial,sans-serif;font-size:14px;color:#71767C;line-height:21px;width:960px;margin:0 auto;position:relative;overflow:hidden;font-family:fordngbs-antenna,Arial,sans-serif;}#page #view,#page #view-container,#page #view-ft{width:auto;}
+sup{font-style:normal;vertical-align:top;line-height:13px;}
+.grid .grid_header .label{float:left;font-size:12px;padding-right:25px;color:#71767C;}}.grid .filters{overflow:hidden;float:left;}.grid .filters li{display:block;float:left;cursor:pointer;font-size:13px;margin:0 30px 0 0;border-bottom:4px solid #fff;color:#22A3E5;padding-bottom:1px;}.grid .filters li.active,.grid .filters li:hover{color:#74AD28;border-color:#74AD28;}.grid_header{background-color:#fff;overflow:hidden;-moz-border-radius:0 0 3px 3px;border-radius:0 0 3px 3px;}.grid_header .wrap{width:923px;margin:0 auto;padding:8px 8px 0 29px;}#td_tooltip h2{color:#74AD28;}.grid .gridholder,.grid .grid_footer{width:968px;margin:0 auto;padding:0 0 8px 5px;}.grid_footer li{font-size:10px;line-height:12px;}.grid_footer li a{color:#23A3E4;}.grid_footer li a:hover{color:#3f4245;text-decoration:underline;}.width1{width:216px;}.width2{width:457px;}.width3{width:698px;}.width4{width:939px;}.height1{height:236px;}.height2{height:497px;}.height3{height:758px;}.height4{height:1018px;}.height5{height:1280px;}.height6{height:1541px;}.height7{height:1802px;}.height8{height:2063px;}
+.polaroid .open,.polaroid .closed,.polaroid .min{margin-top:5px;padding:10px;background:#fff;overflow:hidden;-moz-border-radius:3px;border-radius:3px;}.polaroid .min h3,.polaroid .closed h3{color:#23A3E4;font-size:12px;line-height:14px;font-weight:normal;}.polaroid .min p,.polaroid .closed p{color:#414244;margin:0;padding:0;font-size:14px;line-height:16px;font-family:fordngbs-antenna,verdana,sans-serif;}.polaroid .min .image,.polaroid .closed .image{margin-bottom:10px;background:url(rollover.jpg) no-repeat center;}.polaroid .min .image img,.polaroid .closed .image img{display:block;}.polaroid:hover .closed,.polaroid:hover .min{cursor:pointer;}.polaroid:hover .closed img,.polaroid:hover .min img{opacity:.1;filter:alpha(opacity=10);}.polaroid:hover .closed h3,.polaroid:hover .min h3{color:#74AD28;}.polaroid.filtered .closed,.polaroid.filtered .min{opacity:.5;filter:alpha(opacity=50);}.polaroid.filtered:hover .closed,.polaroid.filtered:hover .min{opacity:1;filter:none;}.polaroid.filtered .closed h3,.polaroid.filtered .min h3{color:#414244;}.polaroid.filtered:hover .closed h3,.polaroid.filtered:hover .min h3{color:#74AD28;}.polaroid.filtered:hover .closed p,.polaroid.filtered:hover .min p{color:#414244;}.polaroid.nofilter .image{border-bottom:4px solid #74AD28;margin-bottom:6px;}.billboard .video{width:100%;height:100%;background:url(/resources/ford/general/innovations/landing/images/interface/polaroid_playUp.png) no-repeat center;position:absolute;}.billboard .video:hover{background:url(/resources/ford/general/innovations/landing/images/interface/polaroid_playOver.png) no-repeat center;}div.videoplay{height:29px;width:29px;left:22px;position:absolute;top:22px;z-index:1;background:url(/resources/ford/general/innovations/landing/images/interface/thumb_play.png) no-repeat 0 0;}.polaroid .open .carousel li:hover div.videoplay{background:url(/resources/ford/general/innovations/landing/images/interface/thumb_play.png) no-repeat 0 bottom;}
+
+.polaroid .open .close{position:absolute;top:15px;right:15px;background:url(InterfaceElements_Sprite.png) no-repeat -68px -28px;height:27px;width:28px;cursor:pointer;z-index:1;}.polaroid .open .close:hover{background-position:-68px 0;cursor:pointer;}
+
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
