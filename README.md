@@ -3,7 +3,12 @@ jShi-git.github.io
 
 jShi-git
 
-合并多个项目到一起方便管理
+保存日常demo
+
+==========================
+2014.5.14
+多个项目合并到一起，方便管理
+
 1、some-demos
 https://github.com/jShi-git/some-demos
 some demos include(html5、js、css3、php、python...)
